@@ -25,7 +25,7 @@ class Addermodel(models.Model):
     population=models.FloatField()
     area=models.ForeignKey(AreaCategorymodel,on_delete=models.CASCADE,related_name='yazi')
     specify=models.CharField(choices=STATUS,max_length=20,default='DAĞLIQ')
-    author=models.ForeignKey(User,on_delete=models.CASCADE,related_name='yazıs')
+    author=models.ForeignKey('customer.CustomerModel',on_delete=models.CASCADE,related_name='yazıs')
     photo=models.ImageField(upload_to='image')
     content=RichTextField()
     wdate=models.DateTimeField(auto_now_add=True)
@@ -36,4 +36,16 @@ class Addermodel(models.Model):
         verbose_name_plural='Yazılar'
     def __str__(self):
         return self.name
+
+class Commentarticle(models.Model):
+    entry=models.ForeignKey(Addermodel,on_delete=models.CASCADE,related_name='comment')
+    content=models.TextField(max_length=2000)
+    author=models.ForeignKey('customer.CustomerModel',on_delete=models.CASCADE,related_name='comments')
+    wdate=models.DateTimeField(auto_now_add=True)
+    class Meta:
+        db_table='Commentlər'
+        verbose_name='Comment'
+        verbose_name_plural='Commentlər'
+    def __str__(self):
+        return str(self.entry)
         
