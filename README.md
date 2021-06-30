@@ -1,0 +1,2 @@
+# yoxla
+sadəcə yoxlanış
