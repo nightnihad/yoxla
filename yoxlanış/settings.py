@@ -59,7 +59,7 @@ ROOT_URLCONF = 'yoxlanış.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates','static'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,12 +131,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL='customer.CustomerModel'
 
-MEDIA_URL='/image/'
+MEDIA_URL='/images/'
 
-MEDAI_ROOT=os.path.join(BASE_DIR,'image')
+MEDAI_ROOT=os.path.join(BASE_DIR,'images')
 
 STATIC_URL='/static/'
 
 STATICFILE_DIRS=[
-    BASE_DIR / 'static'
+    os.path.join(BASE_DIR ,'static')
 ]
+
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')

@@ -25,6 +25,6 @@ import bloh
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name='index'),
-    path('blog/',include('bloh.urls')),
-    path('customer/',include('customer.urls')),
+    path('',include('bloh.urls')),
+    path('',include('customer.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

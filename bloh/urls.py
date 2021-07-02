@@ -1,8 +1,10 @@
 from django.contrib import admin
 from django.urls import path
 from django.conf import Settings
-from .views import index,blog
+from .views import statistika,create,index
 
 urlpatterns=[
-    path('blog/',blog,name='bloh')
+    path('',index,name='index'),
+    path('create/',create,name='create'),
+    path('statictics/',statistika,name='statistika')
 ]

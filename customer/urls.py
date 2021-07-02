@@ -4,5 +4,6 @@ from django.conf import settings
 from customer.views import *
 
 urlpatterns=[
-    path('user',user,name='user'),
+    path('user/',user,name='user'),
+    path('register/',register,name='register')
 ]

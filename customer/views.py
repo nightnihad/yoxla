@@ -2,4 +2,6 @@ from django.shortcuts import render,HttpResponse
 
 # Create your views here.
 def user(request):
-    return HttpResponse('heczad')
+    return render(request,'profil.html')
+def register(request):
+    return render(request,'register.html')
