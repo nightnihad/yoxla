@@ -59,7 +59,7 @@ ROOT_URLCONF = 'yoxlanış.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates','static'],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,8 +121,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    '/var/www/static/',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -130,15 +134,3 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL='customer.CustomerModel'
-
-MEDIA_URL='/images/'
-
-MEDAI_ROOT=os.path.join(BASE_DIR,'images')
-
-STATIC_URL='/static/'
-
-STATICFILE_DIRS=[
-    os.path.join(BASE_DIR ,'static')
-]
-
-STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
